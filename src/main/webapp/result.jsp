@@ -6,9 +6,21 @@
 <p>Color: <%= request.getParameter("color")  %></p>
 <p>Additional options:</p>
 <ul>
-    <c:forEach var="option" items="${param.options}">
-        <li>${option}</li>
-    </c:forEach>
+      <%
+         String option1 = request.getParameter("option1");
+         String option2 = request.getParameter("option2");
+
+         if (option1 != null) {
+      %>
+      <li><%= option1 %></li>
+      <%
+         }
+         if (option2 != null) {
+      %>
+      <li><%= option2 %></li>
+      <%
+         }
+      %>
 </ul>
 
 <h3>Car image:</h3>
